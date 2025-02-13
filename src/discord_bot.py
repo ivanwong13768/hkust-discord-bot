@@ -1,4 +1,4 @@
-import discord, dotenv, os
+import discord, dotenv, os, traceback
 from web_scraper import *
 
 def __find_role(name: str, role_list: list[discord.Role]) -> discord.Role:
@@ -123,5 +123,9 @@ class StudyBot:
     @course.command(name = "scrape", description = "Scrapes all courses in currently viewable semesters")
     async def scrape_courses(ctx: discord.Interaction):
         await ctx.response.defer()
-        scrape()
-        await ctx.followup.send("Finished scraping all the courses.")
+        try:
+            scrape()
+            await ctx.followup.send("Finished scraping all the courses.")
+        except:
+            traceback.print_exc()
+            await ctx.followup.send("An error occurred while scraping the courses.")

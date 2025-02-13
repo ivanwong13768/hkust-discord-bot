@@ -1,5 +1,6 @@
 # hkust-discord-bot
-Discord bot that scrapes web information from HKUST websites and manages discord server channels.
+Discord bot that scrapes web information from HKUST websites and manages discord server channels.  
+**WARNING: This bot is still heavily WIP!**
 
 ## Usage
 1. Create a bot user in Discord Developer Portal
